@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashNet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body background="{{ url_for('static', filename='uploads/img4.avif') }}" background-repeat: no-repeat;>
+    <div class="container">
+        <h2>TrashNet</h2>
+        <form method="post" action="/" enctype="multipart/form-data">
+            <input type="file" name = "file1" id="fileInput">
+            <label for="fileInput">Choose a file</label>
+            <p>
+            <input type="submit" value="Submit" id = "submitBtn">
+        </p>
+
+    {% if filename1 %}
+    <h3 style="color:black;"class="pos">Uploaded photo</h3>
+
+        <div class = "img">
+            <img src="{{ url_for('display_image', filename=filename1) }} " width="250"
+     height="250" />
+
+        </div>
+
+    {% endif %}
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li style="color:black;font-size:20px";> <b>{{ message }}</b> </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+        </form>
+
+    </div>
+
+</body>
+</html>

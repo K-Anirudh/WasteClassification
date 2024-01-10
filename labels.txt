@@ -1,0 +1,5 @@
+0 Carton
+1 Fiber
+2 Metal
+3 Polythene
+4 Wood

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Page</title>
+    <style>
+    div{
+         display: block;
+         margin-left: 400px;
+         margin-right: 400px;
+         width: 50%;
+    }
+    h3{
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width: 50%;
+    }
+    </style>
+</head>
+<body background="{{ url_for('static', filename='uploads/bggg.png') }}">
+<h1>
+<h3 style="color:darkseagreen;">Uploaded Image :</h3>
+    <div>
+         <img src="{{ url_for('display_image', filename=filename) }}" width="250"
+     height="225">
+    </div>
+    <h3 style="color:darkseagreen"> Predicted Class<br> {{ output }}</h3>
+</h1>
